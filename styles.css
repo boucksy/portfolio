@@ -13,10 +13,11 @@
   --color-text: #1a1a1a;
   --color-muted: #666666;
   --color-border: #e0e0e0;
-  --color-accent: #1a1a1a;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --max-width: 960px;
   --nav-height: 72px;
+  --col-left: 150px;
+  --col-gap: 3rem;
 }
 
 html {
@@ -161,12 +162,16 @@ main {
   padding-bottom: 0.75rem;
 }
 
-/* Experience entries */
+/* Shared two-column grid */
+
+.experience-entry,
+.list-entry {
+  display: grid;
+  grid-template-columns: var(--col-left) 1fr;
+  gap: 0 var(--col-gap);
+}
 
 .experience-entry {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 0 3rem;
   margin-bottom: 2.5rem;
 }
 
@@ -174,25 +179,43 @@ main {
   margin-bottom: 0;
 }
 
+.list-entry {
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.list-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Left column meta */
+
 .entry-meta {
   padding-top: 0.1rem;
 }
 
-.entry-date {
-  font-size: 0.8rem;
+.entry-date,
+.entry-company,
+.list-date {
+  font-size: 1rem;
   color: var(--color-muted);
+}
+
+.entry-date {
   line-height: 1.5rem;
   white-space: nowrap;
 }
 
 .entry-company {
-  font-size: 0.8rem;
-  color: var(--color-muted);
   margin-top: 0.15rem;
 }
 
-.entry-content {
+.list-date {
+  padding-top: 0.1rem;
 }
+
+/* Right column content */
 
 .entry-title {
   font-size: 1rem;
@@ -206,10 +229,14 @@ main {
   padding: 0;
 }
 
-.entry-bullets li {
-  font-size: 0.9rem;
+.entry-bullets li,
+.entry-description {
+  font-size: 1rem;
   color: #333;
   line-height: 1.65rem;
+}
+
+.entry-bullets li {
   margin-bottom: 0.5rem;
   padding-left: 1rem;
   position: relative;
@@ -225,9 +252,6 @@ main {
 }
 
 .entry-description {
-  font-size: 0.9rem;
-  color: #333;
-  line-height: 1.65rem;
   margin-top: 0.4rem;
 }
 
@@ -249,27 +273,6 @@ main {
   font-weight: 500;
 }
 
-/* Other Endeavors / Education / Speaking */
-
-.list-entry {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 0 3rem;
-  margin-bottom: 0.85rem;
-  font-size: 0.9rem;
-  line-height: 1.5rem;
-}
-
-.list-entry:last-child {
-  margin-bottom: 0;
-}
-
-.list-date {
-  color: var(--color-muted);
-  font-size: 0.8rem;
-  padding-top: 0.1rem;
-}
-
 .list-content {
   color: var(--color-text);
 }
@@ -287,16 +290,10 @@ main {
   gap: 2rem;
 }
 
-.testimonial {
-  padding-left: 1.5rem;
-  border-left: 2px solid var(--color-border);
-}
-
 .testimonial blockquote {
   font-size: 0.95rem;
   line-height: 1.75rem;
   color: #333;
-  font-style: normal;
   margin-bottom: 0.5rem;
 }
 
@@ -335,5 +332,9 @@ main {
 
   .home-bio p {
     font-size: 1.1rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
   }
 }
