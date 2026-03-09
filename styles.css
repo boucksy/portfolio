@@ -170,6 +170,33 @@ main {
 
 /* Shared two-column grid */
 
+.experience-entry.single-col {
+  display: block;
+}
+
+.entry-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.entry-title a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.entry-title a:hover {
+  opacity: 0.5;
+}
+
+.work-lock {
+  font-size: 0.75em;
+  vertical-align: top;
+  filter: grayscale(1);
+  opacity: 0.8;
+}
+
 .experience-entry,
 .list-entry {
   display: grid;
