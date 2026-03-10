@@ -15,7 +15,7 @@
   --color-border: #e0e0e0;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --max-width: 960px;
-  --nav-height: 72px;
+  --nav-height: 90px;
   --col-left: 175px;
   --col-gap: 3rem;
 }
@@ -83,7 +83,6 @@ nav {
   font-weight: 400;
   color: var(--color-muted);
   transition: color 0.2s, opacity 0.2s;
-  letter-spacing: 0.01em;
 }
 
 .nav-links a:hover {
@@ -299,6 +298,54 @@ section > h2 {
   line-height: 1.75rem;
   color: #333;
   margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   Writing / Post
+   ============================================ */
+
+.post {
+  max-width: 680px;
+}
+
+.post-header {
+  margin-bottom: 2.5rem;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+}
+
+.post-date {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.post-body p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.post-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Writing list link affordance */
+
+.list-content a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.list-content a:hover {
+  opacity: 0.5;
 }
 
 /* ============================================
