@@ -29,13 +29,17 @@
       <div class="experience-entry single-col">
         <div class="entry-content">
           <div class="post-body">
-            <a href="https://vimeo.com/350323394" target="_blank" rel="noopener" class="work-video-link">
-              <img src="uniform-thumbnail.png" class="work-image" alt="Title card for a talk about Uniform, Hudl's design system, showing the Hudl logo and the word UNIFORM over a dramatic red-tinted image of a football helmet" />
-              <svg class="work-play-btn" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <polygon points="26,20 26,44 48,32" fill="white" stroke="white" stroke-width="3" stroke-linejoin="round" />
-              </svg>
-            </a>
-            <p class="work-note work-image-caption">Miranda Bouck and Michael Fouquet talk through Hudl's design system, Uniform (<a href="https://vimeo.com/350323394" target="_blank" rel="noopener">video, 51:24</a>).</p>
+            <figure>
+              <div class="work-video-wrapper">
+                <a class="work-video-poster" href="https://vimeo.com/350323394" aria-label="Play video: Miranda Bouck and Michael Fouquet discuss Uniform, Hudl's design system (51:24)">
+                  <img src="uniform-thumbnail.png" class="work-image" alt="Title card for a talk about Uniform, Hudl's design system, showing the Hudl logo and the word UNIFORM over a dramatic red-tinted image of a football helmet" />
+                  <svg class="work-play-btn" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="26,20 26,44 48,32" fill="white" stroke="white" stroke-width="3" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+              <figcaption class="work-note work-image-caption">Miranda Bouck and Michael Fouquet talk through Hudl's design system, Uniform (video, 51:24).</figcaption>
+            </figure>
             <div class="entry-title">Uniform, the Hudl design system</div>
             <p>Uniform became the first official design system at Hudl. Selling the vision was nearly handled by our buttons alone: our first audit discovered more than 50 buttons across our suite of products, all of which were developed by different teams with different priorities, and different styles and functions.</p>
             <p>The product team at the time included 30 designers and 300+ engineers. We built products for over 180,000 teams across the globe serving 40+ sports with 6 million users.</p>
@@ -47,5 +51,18 @@
     </section>
   </main>
 
+  <script>
+    document.querySelector('.work-video-poster').addEventListener('click', function(e) {
+      e.preventDefault();
+      var wrapper = this.closest('.work-video-wrapper');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://player.vimeo.com/video/350323394?autoplay=1';
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+      iframe.setAttribute('title', 'Miranda Bouck and Michael Fouquet talk through Hudl\'s design system, Uniform');
+      wrapper.appendChild(iframe);
+      wrapper.classList.add('is-playing');
+    });
+  </script>
 </body>
 </html>
