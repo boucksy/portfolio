@@ -11,20 +11,21 @@
   <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
     <nav>
       <a href="/" class="nav-logo">Miranda Bouck</a>
-      <ul class="nav-links">
+      <ul class="nav-links" role="list">
         <li><a href="/resume">Resume</a></li>
         <li><a href="/work" class="active">Work</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section>
-      <h2><a href="/work">← Back</a></h2>
+      <p class="back-link"><a href="/work">← Back</a></p>
 
       <div class="experience-entry single-col">
         <div class="entry-content">
@@ -47,10 +48,11 @@
           </div>
         </div>
       </div>
-      <p class="work-note" style="margin-top: 2.5rem;"><span class="work-lock" aria-hidden="true">🔒</span> To learn more about my work, please reach out at <a href="mailto:mibouck@gmail.com">mibouck@gmail.com</a>.</p>
+      <p class="work-note"><span class="work-lock" aria-hidden="true">🔒</span> To learn more about my work, please reach out at <a href="mailto:mibouck@gmail.com">mibouck@gmail.com</a>.</p>
     </section>
   </main>
 
+  <script src="/scripts.js"></script>
   <script>
     document.querySelector('.work-video-poster').addEventListener('click', function(e) {
       e.preventDefault();

@@ -47,6 +47,24 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+.skip-link {
+  position: absolute;
+  top: -10rem;
+  left: 1rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 200;
+  transition: top 0.1s;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
 /* ============================================
    Header & Navigation
    ============================================ */
@@ -141,6 +159,7 @@ main {
 .home-bio a,
 .entry-title a,
 .list-content a,
+.back-link a,
 p.work-note a,
 figcaption.work-note a {
   text-decoration: underline;
@@ -155,7 +174,8 @@ figcaption.work-note a {
 
 .home-bio a:hover,
 .entry-title a:hover,
-.list-content a:hover {
+.list-content a:hover,
+.back-link a:hover {
   opacity: 0.5;
 }
 
@@ -176,7 +196,8 @@ section:last-child {
   margin-bottom: 0;
 }
 
-section > h2 {
+section > h2,
+.back-link {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -328,21 +349,6 @@ section > h2 {
    Writing / Post
    ============================================ */
 
-.post {
-  max-width: 42.5rem;
-}
-
-.post-header {
-  margin-bottom: 2.5rem;
-}
-
-.post-title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1.3;
-  margin-bottom: 0.4rem;
-}
-
 .post-date {
   display: block;
   font-size: 1rem;
@@ -454,7 +460,49 @@ figcaption.work-note {
   color: var(--color-muted);
 }
 
-p.work-image-caption {
+p.work-note {
+  margin-top: 2.5rem;
+}
+
+/* GIF pause wrapper */
+
+.gif-wrapper {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.gif-wrapper img {
+  margin-bottom: 0;
+}
+
+.gif-play-btn {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.gif-play-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* External link icon */
+
+.external-link-icon {
+  font-size: 0.8em;
+}
+
+.work-image-caption {
   margin-top: -1.5rem;
   margin-bottom: 1.75rem;
 }
@@ -491,5 +539,12 @@ p.work-image-caption {
 
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

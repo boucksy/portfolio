@@ -1,0 +1,7 @@
+document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
+  var icon = document.createElement('span');
+  icon.setAttribute('aria-hidden', 'true');
+  icon.className = 'external-link-icon';
+  icon.textContent = ' ↗';
+  link.appendChild(icon);
+});
