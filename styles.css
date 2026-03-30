@@ -94,6 +94,7 @@ nav {
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: -0.01em;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .nav-logo:hover {
@@ -110,7 +111,7 @@ nav {
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--color-muted);
-  transition: opacity 0.2s;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -165,7 +166,7 @@ p.work-note a,
 figcaption.work-note a {
   text-decoration: underline;
   text-underline-offset: var(--underline-offset);
-  transition: opacity 0.2s;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .home-bio a,
@@ -559,6 +560,15 @@ p.work-note {
 
   .gif-play-btn {
     background: rgba(255, 255, 255, 0.15);
+    color: var(--color-text);
+  }
+
+  .nav-links a:hover,
+  .list-content a:hover,
+  .back-link a:hover,
+  p.work-note a:hover,
+  figcaption.work-note a:hover {
+    opacity: 1;
     color: var(--color-text);
   }
 }
