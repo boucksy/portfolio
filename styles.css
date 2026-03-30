@@ -9,6 +9,7 @@
 }
 
 :root {
+  color-scheme: light dark;
   --color-bg: #ffffff;
   --color-text: #1a1a1a;
   --color-text-secondary: #333333;
@@ -539,6 +540,26 @@ p.work-note {
 
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #111111;
+    --color-text: #ebebeb;
+    --color-text-secondary: #cccccc;
+    --color-muted: #888888;
+    --color-border: #2e2e2e;
+  }
+
+  .work-image,
+  .work-video-wrapper {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .gif-play-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--color-text);
   }
 }
 
