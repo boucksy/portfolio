@@ -98,7 +98,7 @@ nav {
 }
 
 .nav-logo:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .nav-links {
@@ -115,7 +115,7 @@ nav {
 }
 
 .nav-links a:hover {
-  opacity: 0.6;
+  opacity: 0.7;
   text-decoration: underline;
   text-underline-offset: var(--underline-offset);
 }
@@ -178,12 +178,12 @@ figcaption.work-note a {
 .entry-title a:hover,
 .list-content a:hover,
 .back-link a:hover {
-  opacity: 0.5;
+  opacity: 0.65;
 }
 
 p.work-note a:hover,
 figcaption.work-note a:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* ============================================
